@@ -26,6 +26,10 @@ class CrmClaim(models.Model):
     def _get_default_team(self):
         return self.env['crm.team']._get_default_team_id()
 
+    @api.multi
+    def _links_get(self):
+        return [(link.object, link.name) for link in self.env['res.request.link'].search([])]
+
     name = fields.Char(
         string='Claim Subject',
         required=True,
@@ -56,7 +60,7 @@ class CrmClaim(models.Model):
         default=fields.Datetime.now,
     )
     model_ref_id = fields.Reference(
-        selection=odoo.addons.base.res.res_request.referenceable_models,
+        selection=_links_get,
         string='Reference',
         oldname='ref',
     )

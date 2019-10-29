@@ -84,6 +84,7 @@ Contributors
 * Odoo S.A.
 * Vicent Cubells <vicent.cubells@tecnativa.com>
 * Bhavesh Odedra <bodedra@ursainfosystems.com>
+* Ugaitz Olaizola <uolaizola@binovo.es>
 
 Maintainers
 ~~~~~~~~~~~
